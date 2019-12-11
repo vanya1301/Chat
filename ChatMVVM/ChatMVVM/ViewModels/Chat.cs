@@ -6,6 +6,7 @@
         private string _Name;
         private string _History = "";
         private int _ID;
+        
 
         public string Name
         {

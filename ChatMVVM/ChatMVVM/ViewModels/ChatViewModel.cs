@@ -96,7 +96,10 @@ namespace ChatMVVM.ViewModels
 
         public void ChatRoomButton(object obj)
         {
+            var a = (Chat)obj;
             var chatName = (obj as Button).Content.ToString();
+            
+
             if (chatName == "General")
                 CurrentChatID = 1;
 
@@ -239,20 +242,7 @@ namespace ChatMVVM.ViewModels
                 message = $"User {message} joined the room.";
                 WriteToChatHistory(message, _GeneralChatRoomID);
             }
-
-            /* else if (message.StartsWith(MsgKeys.ChatHistory))
-             {
-
-
-                  message = message.Substring(5);
-                  var messageData = message.Split('~');
-
-                  for (int i = 0; i < messageData.Length; i++)
-                  {
-                      var msg = Encrypt.DecodeMessage(messageData[i]);
-                      ParseReceivedMessage(msg).Wait();
-                  }
-             }*/
+           
         }
 
         private void ParseHistory(string history)
@@ -291,7 +281,6 @@ namespace ChatMVVM.ViewModels
                     if (_ChatHandler.client.Connected)
                     {
                         var data = _ChatHandler.ReceiveMessage();
-                        //data = await Encrypt.DecodeMessage(data);
                         if (!string.IsNullOrEmpty(data))
                         {
                             if (Histories(data))

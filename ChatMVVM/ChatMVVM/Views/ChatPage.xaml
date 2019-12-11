@@ -25,6 +25,8 @@
         <ListView
             Grid.Column="0"
             Margin="0,0,0,0"
+            Padding="0"
+            
             ItemsSource="{Binding _Chats}">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">

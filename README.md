@@ -1,3 +1,1 @@
-
-Open from ChatMVVM
-
+Simple chat system, with encryption, Data Base, and client side based on MVVM pattern.
